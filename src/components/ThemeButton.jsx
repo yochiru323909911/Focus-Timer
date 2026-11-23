@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { ThemeContext } from "../App";
+
 function ThemeButton() {
   console.log('render: ThemeButton')
 
-  return <button className="theme-button">Dark mode</button>
+  const { light, toggleLight } = useContext(ThemeContext);
+
+  return <button className="theme-button" onClick={toggleLight}>{light ? "Dark mode" : "Light mode"}</button>
 }
 
 export default ThemeButton
